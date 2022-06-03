@@ -26,14 +26,17 @@ function checkJurusan(input) {
 		if (key.toLowerCase() === input) {
 			isJurusan = true;
 			jurusanKode.push(String(jurusanCode[key]));
+			break;
 		}
 	}
 
-	for (const key in jurusanList) {
-		const value = jurusanList[key];
-		if (String(value).toLowerCase().includes(input)) {
-			isJurusan = true;
-			jurusanKode.push(key);
+	if (jurusanKode.length === 0) {
+		for (const key in jurusanList) {
+			const value = jurusanList[key];
+			if (String(value).toLowerCase().includes(input)) {
+				isJurusan = true;
+				jurusanKode.push(key);
+			}
 		}
 	}
 
@@ -55,11 +58,13 @@ function checkFakultas(input) {
 		}
 	}
 
-	for (const key in fakultasList) {
-		const value = fakultasList[key];
-		if (String(value).toLowerCase().includes(input)) {
-			isFakultas = true;
-			fakultasKode.push(key);
+	if (fakultasKode.length === 0) {
+		for (const key in fakultasList) {
+			const value = fakultasList[key];
+			if (String(value).toLowerCase().includes(input)) {
+				isFakultas = true;
+				fakultasKode.push(key);
+			}
 		}
 	}
 
