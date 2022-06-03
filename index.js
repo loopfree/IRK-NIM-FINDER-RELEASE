@@ -393,6 +393,6 @@ app.get("/api/:query", (req, res) => {
 
 const port = process.env.PORT || 8000;
 
-app.listen("8000", () => {
-	console.log("Listening at 8000");
+app.listen(port, () => {
+	console.log(`Listening at ${port}`);
 });
